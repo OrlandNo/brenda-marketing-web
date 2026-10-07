@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | Brenda Peña Meza Marketing</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../imagenes/favicon.png">
+    
+    <!-- Remixicon CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    
+    <!-- Google Fonts: League Spartan & Jost -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=League+Spartan:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- CSS Principal -->
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+        <!-- =========================================================
+     BOTÓN FLOTANTE DE WHATSAPP (ROJO CARMESÍ / DERECHA)
+========================================================= -->
+<a href="https://wa.me/5215500000000?text=Hola%20Brenda,%20me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20sobre%20tus%20servicios%20digitales." 
+   class="whatsapp-float-btn" 
+   target="_blank" 
+   rel="noopener noreferrer" 
+   aria-label="Contactar por WhatsApp">
+    <i class="ri-whatsapp-line"></i>
+    <span class="whatsapp-tooltip">¿Dudas? ¡Escríbenos!</span>
+</a>
+
+    <!-- Header & Menú de Navegación Responsivo -->
+    <header class="main-header">
+        <div class="header-container">
+            
+            <!-- Links Izquierdos -->
+            <nav class="nav-menu nav-left">
+                <a href="../../index.html" class="nav-link">Inicio</a>
+                <a href="../nosotros/index.html" class="nav-link">Nosotros</a>
+            </nav>
+
+            <!-- Logo Central -->
+            <a href="../../index.html" class="logo-container">
+                <img src="../imagenes/logocentral.png" alt="Brenda Peña Meza Marketing" class="site-logo">
+            </a>
+
+            <!-- Links Derechos -->
+            <nav class="nav-menu nav-right">
+                <a href="../servicios/index.html" class="nav-link">Servicios</a>
+                <a href="index.html" class="nav-link active">Contacto</a>
+            </nav>
+
+            <!-- Botón Hamburguesa para Móvil -->
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Abrir Menú">
+                <i class="ri-menu-3-line"></i>
+            </button>
+        </div>
+
+        <!-- Menú Desplegable Móvil -->
+        <div class="mobile-menu" id="mobileMenu">
+            <nav class="mobile-nav">
+                <a href="../../index.html" class="mobile-link">Inicio</a>
+                <a href="../nosotros/index.html" class="mobile-link">Nosotros</a>
+                <a href="../servicios/index.html" class="mobile-link">Servicios</a>
+                <a href="index.html" class="mobile-link active">Contacto</a>
+                <a href="../politica/index.html" class="mobile-link">Política de Privacidad</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contenedor Principal (Para maquetar contenido después) -->
+    <main class="main-content">
+        <!-- =========================================================
+     SECCIÓN DE CONTACTO & FORMULARIO DE COTIZACIÓN (VISUAL)
+========================================================= -->
+<section class="contact-section">
+    <div class="contact-container">
+        
+        <!-- Encabezado -->
+        <div class="contact-header fade-in-up">
+            <span class="contact-badge">
+                <i class="ri-chat-smile-2-fill"></i> Cotización Personalizada
+            </span>
+            <h1 class="contact-title">
+                Hablemos de tu <span class="title-highlight">próximo proyecto</span>
+            </h1>
+            <p class="contact-subtitle">
+                Selecciona el servicio de tu interés y llena tus datos. Nos pondremos en contacto contigo lo antes posible para entregarte una propuesta a tu medida.
+            </p>
+        </div>
+
+        <!-- Tarjeta del Formulario (Redirección directa a Gracias) -->
+        <div class="contact-card-wrapper fade-in-up delay-1">
+            <form id="contactQuoteForm" action="../gracias/index.html" method="GET" class="formal-contact-form">
+                
+                <div class="form-grid">
+                    
+                    <!-- Nombre Completo -->
+                    <div class="form-group">
+                        <label for="nombre" class="form-label">Nombre completo <span class="required">*</span></label>
+                        <div class="input-icon-wrapper">
+                            <i class="ri-user-3-line"></i>
+                            <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre" required autocomplete="name">
+                        </div>
+                    </div>
+
+                    <!-- Teléfono / WhatsApp -->
+                    <div class="form-group">
+                        <label for="telefono" class="form-label">Teléfono / WhatsApp <span class="required">*</span></label>
+                        <div class="input-icon-wrapper">
+                            <i class="ri-whatsapp-line"></i>
+                            <input type="tel" id="telefono" name="telefono" placeholder="Ej. 55 1234 5678" required autocomplete="tel">
+                        </div>
+                    </div>
+
+                    <!-- Correo Electrónico -->
+                    <div class="form-group">
+                        <label for="correo" class="form-label">Correo electrónico <span class="required">*</span></label>
+                        <div class="input-icon-wrapper">
+                            <i class="ri-mail-line"></i>
+                            <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.com" required autocomplete="email">
+                        </div>
+                    </div>
+
+                    <!-- Selector de Servicio -->
+                    <div class="form-group">
+                        <label for="servicio" class="form-label">Servicio a cotizar <span class="required">*</span></label>
+                        <div class="input-icon-wrapper">
+                            <i class="ri-service-line"></i>
+                            <select id="servicio" name="servicio" required>
+                                <option value="" disabled selected>Selecciona una opción</option>
+                                <option value="Creación y Grabación de Contenido">01. Creación y Grabación de Contenido</option>
+                                <option value="Guionismo y Copywriting">02. Guionismo y Copywriting</option>
+                                <option value="Campañas de Tráfico Pago y Meta Ads">03. Campañas de Tráfico Pago y Meta Ads</option>
+                                <option value="Edición de Video Profesional">04. Edición de Video Profesional</option>
+                                <option value="Producción de Podcasts">05. Producción de Podcasts 🎙️</option>
+                                <option value="Social Media Management">06. Social Media Management</option>
+                                <option value="Diseño de Identidad Visual y Logotipos">07. Diseño de Identidad Visual y Logotipos 🎨</option>
+                                <option value="Fotografía Comercial y de Marca">08. Fotografía Comercial y de Marca 📸</option>
+                                <option value="Consultoría y Mentoría 1 a 1">09. Consultoría y Mentoría 1 a 1</option>
+                                <option value="Diseño y Desarrollo Web">10. Diseño y Desarrollo Web</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Detalle o Mensaje Opcional -->
+                <div class="form-group full-width">
+                    <label for="mensaje" class="form-label">Detalles adicionales del proyecto (opcional)</label>
+                    <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos brevemente sobre tu marca, objetivos o fecha estimada..."></textarea>
+                </div>
+
+                <!-- Botón de Envío / Redirección directa -->
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary btn-submit-quote">
+                        <span>SOLICITAR COTIZACIÓN</span>
+                        <i class="ri-send-plane-fill"></i>
+                    </button>
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+</section>
+    </main>
+
+    <!-- =========================================================
+     FOOTER PARA SUBCARPETAS
+========================================================= -->
+<footer class="main-footer">
+    <div class="footer-container">
+        <p class="footer-copy">
+            &copy; <span id="currentYear"></span> <strong>Brenda Peña Meza Marketing</strong>. Todos los derechos reservados.
+        </p>
+        <div class="footer-links">
+            <a href="../politica/index.html" class="footer-link">Política de Privacidad</a>
+        </div>
+    </div>
+</footer>
+
+    <!-- Script Principal -->
+    <script src="../js/script.js"></script>
+</body>
+</html>

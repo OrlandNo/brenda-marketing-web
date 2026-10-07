@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Cotización Recibida! | Brenda Peña Meza Marketing</title>
+    
+    <!-- Favicon de la raíz -->
+    <link rel="icon" type="image/png" href="../imagenes/favicon.png">
+    
+    <!-- Remixicon CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    
+    <!-- Google Fonts: League Spartan & Jost -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=League+Spartan:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Estilos Embebidos (Misma Línea Dark SaaS / Neon / Brand) -->
+    <style>
+        :root {
+            /* Paleta Oficial del Sitio */
+            --color-burgundy: #68152C;
+            --color-crimson: #C8102E;
+            --color-rose: #CC5C74;
+            --color-nude: #F7E1DE;
+            --color-white: #FFFFFF;
+            --color-dark: #1F191B;
+            --color-gray-light: #FBF8F7;
+            --whatsapp-green: #25D366;
+            --whatsapp-hover: #1DA851;
+
+            /* Tipografías */
+            --font-heading: 'League Spartan', sans-serif;
+            --font-body: 'Jost', sans-serif;
+
+            /* Sombras & Transiciones */
+            --shadow-soft: 0 10px 30px rgba(104, 21, 44, 0.08);
+            --transition: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-gray-light);
+            color: var(--color-dark);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px 20px;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(204, 92, 116, 0.12) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(200, 16, 46, 0.08) 0%, transparent 40%);
+        }
+
+        /* Contenedor Principal */
+        .thankyou-wrapper {
+            width: 100%;
+            max-width: 680px;
+            margin: auto;
+            text-align: center;
+        }
+
+        /* Logo Central Principal */
+        .brand-logo {
+            height: 65px;
+            width: auto;
+            object-fit: contain;
+            margin-bottom: 25px;
+            filter: drop-shadow(0 4px 12px rgba(104, 21, 44, 0.1));
+            transition: var(--transition);
+        }
+
+        .brand-logo:hover {
+            transform: scale(1.03);
+        }
+
+        /* Tarjeta Principal */
+        .thankyou-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(204, 92, 116, 0.25);
+            border-radius: 28px;
+            padding: 45px 35px;
+            box-shadow: 0 20px 50px rgba(104, 21, 44, 0.1);
+            position: relative;
+        }
+
+        /* Ícono Animado de Éxito */
+        .success-icon-wrapper {
+            width: 85px;
+            height: 85px;
+            background: rgba(37, 211, 102, 0.12);
+            border: 2px solid rgba(37, 211, 102, 0.4);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px auto;
+            color: var(--whatsapp-green);
+            font-size: 2.8rem;
+            box-shadow: 0 0 25px rgba(37, 211, 102, 0.25);
+            animation: pulseGlow 2s infinite ease-in-out;
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { 
+                transform: scale(1); 
+                box-shadow: 0 0 25px rgba(37, 211, 102, 0.25); 
+            }
+            50% { 
+                transform: scale(1.06); 
+                box-shadow: 0 0 35px rgba(37, 211, 102, 0.45); 
+            }
+        }
+
+        .thankyou-title {
+            font-family: var(--font-heading);
+            font-size: clamp(2rem, 3.8vw, 2.8rem);
+            font-weight: 800;
+            line-height: 1.1;
+            color: var(--color-burgundy);
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .thankyou-subtitle {
+            font-size: 1.05rem;
+            color: var(--color-dark);
+            opacity: 0.85;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        /* Caja de Notificación de Correo enviado */
+        .email-notice-box {
+            background: var(--color-nude);
+            border: 1px solid rgba(204, 92, 116, 0.25);
+            border-radius: 16px;
+            padding: 16px 20px;
+            margin-bottom: 28px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-align: left;
+        }
+
+        .email-notice-box i {
+            font-size: 1.8rem;
+            color: var(--color-crimson);
+            flex-shrink: 0;
+        }
+
+        .email-notice-box p {
+            font-size: 0.92rem;
+            color: var(--color-burgundy);
+            font-weight: 500;
+            line-height: 1.45;
+            margin: 0;
+        }
+
+        /* Paso Final: Tarjeta de WhatsApp */
+        .step-final-card {
+            background: var(--color-gray-light);
+            border: 2px dashed rgba(37, 211, 102, 0.5);
+            border-radius: 20px;
+            padding: 28px 22px;
+            margin-bottom: 10px;
+        }
+
+        .step-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-family: var(--font-heading);
+            font-size: 0.8rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--whatsapp-green);
+            background: rgba(37, 211, 102, 0.1);
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid rgba(37, 211, 102, 0.3);
+            margin-bottom: 12px;
+        }
+
+        .step-title {
+            font-family: var(--font-heading);
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: var(--color-burgundy);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .step-description {
+            font-size: 0.95rem;
+            color: var(--color-dark);
+            opacity: 0.85;
+            line-height: 1.55;
+            margin-bottom: 18px;
+        }
+
+        /* Contador Regresivo */
+        .redirect-timer-text {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--color-burgundy);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .redirect-timer-text strong {
+            color: var(--color-crimson);
+            font-size: 1.2rem;
+            font-weight: 800;
+        }
+
+        /* Botón de WhatsApp */
+        .btn-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            width: 100%;
+            padding: 16px 24px;
+            background: linear-gradient(135deg, var(--whatsapp-green) 0%, var(--whatsapp-hover) 100%);
+            color: var(--color-white);
+            font-family: var(--font-heading);
+            font-size: 1rem;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            border-radius: 14px;
+            text-decoration: none;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+            transition: var(--transition);
+        }
+
+        .btn-whatsapp i {
+            font-size: 1.4rem;
+        }
+
+        .btn-whatsapp:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 35px rgba(37, 211, 102, 0.45);
+        }
+
+        /* Footer Sencillo Integrado */
+        .page-footer {
+            margin-top: 35px;
+            font-size: 0.85rem;
+            color: var(--color-dark);
+            opacity: 0.7;
+        }
+
+        .page-footer strong {
+            color: var(--color-burgundy);
+        }
+
+        /* Ajustes Responsivos */
+        @media (max-width: 600px) {
+            .thankyou-card {
+                padding: 30px 20px;
+            }
+
+            .thankyou-title {
+                font-size: 1.8rem;
+            }
+
+            .step-title {
+                font-size: 1.15rem;
+            }
+
+            .btn-whatsapp {
+                padding: 14px 18px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <main class="thankyou-wrapper">
+        
+        <!-- Logo Principal Centrado -->
+        <a href="../../index.html">
+            <img src="../imagenes/logocentral.png" alt="Brenda Peña Meza Marketing" class="brand-logo">
+        </a>
+
+        <!-- Tarjeta de Confirmación -->
+        <div class="thankyou-card">
+            
+            <!-- Ícono Animado de Éxito -->
+            <div class="success-icon-wrapper">
+                <i class="ri-checkbox-circle-fill"></i>
+            </div>
+
+            <h1 class="thankyou-title">¡Hemos recibido tu solicitud!</h1>
+            <p class="thankyou-subtitle">Gracias por contactarnos. Tu cotización para el servicio seleccionado ha sido procesada correctamente.</p>
+
+            <!-- Aviso de correo recibido -->
+            <div class="email-notice-box">
+                <i class="ri-mail-check-line"></i>
+                <p>Te hemos enviado la información de tu solicitud a tu correo electrónico. Revisaremos tus requerimientos para enviarte una propuesta personalizada.</p>
+            </div>
+
+            <!-- Paso Final: Redirección e Integración a WhatsApp -->
+            <div class="step-final-card">
+                <span class="step-badge">
+                    <i class="ri-whatsapp-line"></i> ¡ÚLTIMO PASO OBLIGATORIO!
+                </span>
+                <h2 class="step-title">Únete a nuestra comunidad de WhatsApp</h2>
+                <p class="step-description">
+                    Recibe atención inmediata, comparte sorpresas exclusivas y accede a todos los detalles necesarios antes de iniciar tu proyecto.
+                </p>
+
+                <!-- Contador en Vivo (5 segundos) -->
+                <p class="redirect-timer-text">
+                    <i class="ri-loader-4-line ri-spin"></i> Te redirigiremos automáticamente en <strong id="countdown">5</strong> segundos...
+                </p>
+
+                <!-- Botón de WhatsApp (Redirige en la misma pestaña) -->
+                <a id="whatsappBtn" href="https://chat.whatsapp.com/TU_CODIGO_DE_GRUPO_AQUI" class="btn-whatsapp">
+                    <i class="ri-whatsapp-line"></i>
+                    <span>Unirme a la comunidad en WhatsApp</span>
+                </a>
+            </div>
+
+        </div>
+
+        <!-- Footer Sencillo -->
+        <footer class="page-footer">
+            <p>&copy; <span id="year"></span> <strong>Brenda Peña Meza Marketing</strong>. Todos los derechos reservados.</p>
+        </footer>
+
+    </main>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Actualización automática del año actual
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Lógica del contador regresivo (5 segundos) redirigiendo al Inicio
+        let secondsLeft = 5;
+        const countdownEl = document.getElementById('countdown');
+        // Ruta para volver al index original desde la subcarpeta gracias
+        const targetUrl = "../../index.html"; 
+
+        const timer = setInterval(() => {
+            secondsLeft--;
+            if (countdownEl) {
+                countdownEl.textContent = secondsLeft;
+            }
+
+            if (secondsLeft <= 0) {
+                clearInterval(timer);
+                // Redirección directa al inicio del sitio web
+                window.location.href = targetUrl;
+            }
+        }, 1000);
+    });
+</script>
+</body>
+</html>

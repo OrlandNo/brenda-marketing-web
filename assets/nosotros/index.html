@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros | Brenda Peña Meza Marketing</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../imagenes/favicon.png">
+    
+    <!-- Remixicon CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    
+    <!-- Google Fonts: League Spartan & Jost -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=League+Spartan:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- CSS Principal -->
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+        <!-- =========================================================
+     BOTÓN FLOTANTE DE WHATSAPP (ROJO CARMESÍ / DERECHA)
+========================================================= -->
+<a href="https://wa.me/5215500000000?text=Hola%20Brenda,%20me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20sobre%20tus%20servicios%20digitales." 
+   class="whatsapp-float-btn" 
+   target="_blank" 
+   rel="noopener noreferrer" 
+   aria-label="Contactar por WhatsApp">
+    <i class="ri-whatsapp-line"></i>
+    <span class="whatsapp-tooltip">¿Dudas? ¡Escríbenos!</span>
+</a>
+
+    <!-- Header & Menú de Navegación Responsivo -->
+    <header class="main-header">
+        <div class="header-container">
+            
+            <!-- Links Izquierdos -->
+            <nav class="nav-menu nav-left">
+                <a href="../../index.html" class="nav-link">Inicio</a>
+                <a href="index.html" class="nav-link active">Nosotros</a>
+            </nav>
+
+            <!-- Logo Central -->
+            <a href="../../index.html" class="logo-container">
+                <img src="../imagenes/logocentral.png" alt="Brenda Peña Meza Marketing" class="site-logo">
+            </a>
+
+            <!-- Links Derechos -->
+            <nav class="nav-menu nav-right">
+                <a href="../servicios/index.html" class="nav-link">Servicios</a>
+                <a href="../contacto/index.html" class="nav-link">Contacto</a>
+            </nav>
+
+            <!-- Botón Hamburguesa para Móvil -->
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Abrir Menú">
+                <i class="ri-menu-3-line"></i>
+            </button>
+        </div>
+
+        <!-- Menú Desplegable Móvil -->
+        <div class="mobile-menu" id="mobileMenu">
+            <nav class="mobile-nav">
+                <a href="../../index.html" class="mobile-link">Inicio</a>
+                <a href="index.html" class="mobile-link active">Nosotros</a>
+                <a href="../servicios/index.html" class="mobile-link">Servicios</a>
+                <a href="../contacto/index.html" class="mobile-link">Contacto</a>
+                <a href="../politica/index.html" class="mobile-link">Política de Privacidad</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contenedor Principal (Para maquetar contenido después) -->
+    <main class="main-content">
+        <!-- =========================================================
+     SECCIÓN NOSOTROS (VISTA ESCRITORIO SIN SCROLL & FORMAL)
+========================================================= -->
+<section class="about-section">
+    <div class="about-container">
+        
+        <!-- Columna Izquierda: Imagen Brenda en Bicicleta -->
+        <div class="about-col about-image-col zoom-in">
+            <div class="about-image-wrapper">
+                <div class="about-bg-circle"></div>
+                <img src="../imagenes/bicirapida_caricatura.png" alt="Brenda Peña Meza - Estrategia Rápida y Efectiva" class="about-avatar">
+            </div>
+        </div>
+
+        <!-- Columna Derecha: Información Formal & Servicios de Marketing -->
+        <div class="about-col about-text-col fade-in-up">
+            <span class="about-badge">
+                <i class="ri-rocket-2-fill"></i> Agencia de Marketing Digital
+            </span>
+
+            <h1 class="about-title">
+                Impulsamos marcas con <span class="title-highlight">agilidad, estrategia</span> y precisión.
+            </h1>
+
+            <p class="about-description">
+                Nos especializamos en transformar negocios tradicionales y marcas personales en proyectos digitales rentables. Diseñamos ecosistemas de atracción, posicionamiento y aceleración comercial para que tu marca destaque en un entorno altamente competitivo.
+            </p>
+
+            <!-- Grid de Servicios de Marketing -->
+            <div class="about-services-grid">
+                <div class="about-service-item">
+                    <i class="ri-line-chart-line"></i>
+                    <div>
+                        <h4>Estrategia & Growth</h4>
+                        <p>Embudos de venta y campañas enfocadas en retorno directo de inversión.</p>
+                    </div>
+                </div>
+
+                <div class="about-service-item">
+                    <i class="ri-palette-line"></i>
+                    <div>
+                        <h4>Identidad & Branding</h4>
+                        <p>Diseño de marca, presencia visual profesional y posicionamiento.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Botón de Acción a Servicios -->
+            <div class="about-actions">
+                <a href="../servicios/index.html" class="btn btn-primary">
+                    <span>Conoce nuestros servicios</span>
+                    <i class="ri-arrow-right-line"></i>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</section>
+    </main>
+
+    <!-- =========================================================
+     FOOTER PARA SUBCARPETAS
+========================================================= -->
+<footer class="main-footer">
+    <div class="footer-container">
+        <p class="footer-copy">
+            &copy; <span id="currentYear"></span> <strong>Brenda Peña Meza Marketing</strong>. Todos los derechos reservados.
+        </p>
+        <div class="footer-links">
+            <a href="../politica/index.html" class="footer-link">Política de Privacidad</a>
+        </div>
+    </div>
+</footer>
+
+    <!-- Script Principal -->
+    <script src="../js/script.js"></script>
+</body>
+</html>
