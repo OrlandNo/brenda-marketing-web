@@ -1667,3 +1667,25 @@ a {
         display: none; /* Oculta la etiqueta de texto en móviles para evitar obstrucción */
     }
 }
+
+/* =========================================================
+   ESTILOS ADICIONALES PARA POLÍTICA DE PRIVACIDAD INTEGRAL
+========================================================= */
+.policy-card h4 {
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--color-burgundy);
+    margin: 18px 0 8px 0;
+}
+
+.policy-divider {
+    border: 0;
+    height: 1px;
+    background: rgba(204, 92, 116, 0.2);
+    margin: 24px 0;
+}
+
+.policy-list li i.ri-close-circle-line {
+    color: var(--color-crimson);
+}
