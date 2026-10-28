@@ -22,6 +22,42 @@
 <body>
 
     <!-- =========================================================
+     BARRA SUPERIOR DE CONTEO REGRESIVO (STICKY COUNTER)
+========================================================= -->
+<div id="sticky-countdown-bar" class="countdown-bar">
+    <div class="countdown-container">
+        <!-- Info del Evento -->
+        <div class="countdown-info">
+            <span class="countdown-badge"><i class="ri-ghost-line"></i> ESPECIAL DE HALLOWEEN</span>
+            <p class="countdown-title">La oferta de temporada termina en:</p>
+        </div>
+
+        <!-- Temporizador Regresivo -->
+        <div class="countdown-timer">
+            <div class="timer-unit">
+                <span id="c-days" class="number">00</span>
+                <span class="label">Días</span>
+            </div>
+            <span class="dots">:</span>
+            <div class="timer-unit">
+                <span id="c-hours" class="number">00</span>
+                <span class="label">Horas</span>
+            </div>
+            <span class="dots">:</span>
+            <div class="timer-unit">
+                <span id="c-minutes" class="number">00</span>
+                <span class="label">Min</span>
+            </div>
+            <span class="dots">:</span>
+            <div class="timer-unit">
+                <span id="c-seconds" class="number">00</span>
+                <span class="label">Seg</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- =========================================================
      BOTÓN FLOTANTE DE WHATSAPP (ROJO CARMESÍ / DERECHA)
 ========================================================= -->
 <a href="https://wa.me/5215500000000?text=Hola%20Brenda,%20me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20sobre%20tus%20servicios%20digitales." 
@@ -32,6 +68,7 @@
     <i class="ri-whatsapp-line"></i>
     <span class="whatsapp-tooltip">¿Dudas? ¡Escríbenos!</span>
 </a>
+
 
     <!-- Header & Menú de Navegación Responsivo -->
     <header class="main-header">
@@ -244,5 +281,46 @@
 
     <!-- Script Principal -->
     <script src="assets/js/script.js"></script>
+
+<!-- =========================================================
+     MODAL POP-UP PROMOCIONAL: HALLOWEEN 2026
+========================================================= -->
+<div id="halloween-popup-overlay" class="halloween-overlay">
+    <div class="halloween-modal">
+        <!-- Botón de Cerrar -->
+        <button id="closeHalloweenPopup" class="halloween-close-btn" aria-label="Cerrar ventana">
+            <i class="ri-close-line"></i>
+        </button>
+
+        <!-- Badge de Temporada -->
+        <div class="halloween-badge">
+            <i class="ri-ghost-line"></i> CAMPAÑA DE HALLOWEEN 2026
+        </div>
+
+        <h2 class="halloween-title">
+            ¡SIN TRUCOS, SOLO <span class="halloween-highlight">DESCUENTO</span>!
+        </h2>
+
+        <p class="halloween-description">
+            Aprovecha un <strong>10% OFF especial</strong> en la contratación de cualquiera de nuestras soluciones de marketing digital.
+        </p>
+
+        <!-- Cuadro con el Código Promocional -->
+        <div class="halloween-code-box">
+            <span class="code-label">Tus cupones de temporada:</span>
+            <div class="code-badge">HALLOWEEN10</div>
+        </div>
+
+        <!-- Botón de Acción Principal -->
+        <a href="assets/contacto/index.html" class="btn btn-halloween">
+            <i class="ri-ticket-2-line"></i>
+            <span>RECLAMAR MI DESCUENTO</span>
+        </a>
+
+        <p class="halloween-footer-note">
+            * Válido durante la semana de Halloween 2026.
+        </p>
+    </div>
+</div>
 </body>
 </html>
