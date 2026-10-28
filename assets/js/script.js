@@ -1,20 +1,36 @@
 document.addEventListener('DOMContentLoaded', () => {
+
+    // =========================================================
+    // 1. CONTROL DEL MENÚ MÓVIL (DESPLEGABLE / HAMBURGUESA)
+    // =========================================================
     const mobileToggle = document.getElementById('mobileToggle');
     const mobileMenu = document.getElementById('mobileMenu');
-    
+
     if (mobileToggle && mobileMenu) {
-        mobileToggle.addEventListener('click', () => {
+        // Toggle abrir/cerrar menú al hacer clic en el botón de tres líneas
+        mobileToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
             mobileMenu.classList.toggle('active');
             const icon = mobileToggle.querySelector('i');
             
-            if (mobileMenu.classList.contains('active')) {
-                icon.className = 'ri-close-line';
-            } else {
-                icon.className = 'ri-menu-3-line';
+            if (icon) {
+                icon.className = mobileMenu.classList.contains('active') 
+                    ? 'ri-close-line' 
+                    : 'ri-menu-3-line';
             }
         });
-        
-        // Cierra el menú al presionar fuera o al hacer click en un link
+
+        // Cierra el menú automáticamente al hacer clic en cualquier enlace interno
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                const icon = mobileToggle.querySelector('i');
+                if (icon) icon.className = 'ri-menu-3-line';
+            });
+        });
+
+        // Cierra el menú si se hace clic en cualquier parte fuera de él
         document.addEventListener('click', (e) => {
             if (!mobileToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
                 mobileMenu.classList.remove('active');
@@ -23,10 +39,25 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // =========================================================
+    // 2. TEMPORIZADOR REGRESIVO FICTICIO (24 HORAS RECURRENTES)
+    // =========================================================
+    startOfferCountdown();
+
+    // =========================================================
+    // 3. PANTALLA DE CARGA (SPLASH SCREEN - 2 SEGUNDOS)
+    // =========================================================
+    const loaderScreen = document.getElementById('loader-screen');
+    if (loaderScreen) {
+        setTimeout(() => {
+            loaderScreen.classList.add('hidden');
+        }, 2000);
+    }
+
 });
 
-
-// Temporizador regresivo para la oferta especial del Servicio 8
+// Función auxiliar para la cuenta regresiva del temporizador
 function startOfferCountdown() {
     const hoursEl = document.getElementById('offerHours');
     const minutesEl = document.getElementById('offerMinutes');
@@ -34,7 +65,6 @@ function startOfferCountdown() {
 
     if (!hoursEl || !minutesEl || !secondsEl) return;
 
-    // Establecer un conteo regresivo ficticio de 24 horas recurrentes
     let totalSeconds = 24 * 3600;
 
     setInterval(() => {
@@ -49,42 +79,4 @@ function startOfferCountdown() {
         minutesEl.textContent = String(m).padStart(2, '0');
         secondsEl.textContent = String(s).padStart(2, '0');
     }, 1000);
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-    startOfferCountdown();
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-    // Control del Menú Móvil
-    const mobileToggle = document.getElementById('mobileToggle');
-    const mobileMenu = document.getElementById('mobileMenu');
-    
-    if (mobileToggle && mobileMenu) {
-        mobileToggle.addEventListener('click', () => {
-            mobileMenu.classList.toggle('active');
-            const icon = mobileToggle.querySelector('i');
-            if (icon) {
-                icon.className = mobileMenu.classList.contains('active') 
-                    ? 'ri-close-line' 
-                    : 'ri-menu-3-line';
-            }
-        });
-        
-        document.addEventListener('click', (e) => {
-            if (!mobileToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
-                mobileMenu.classList.remove('active');
-                const icon = mobileToggle.querySelector('i');
-                if (icon) icon.className = 'ri-menu-3-line';
-            }
-        });
-    }
-});
-
-// Pantalla de carga de 2 segundos (Splash Screen)
-const loaderScreen = document.getElementById('loader-screen');
-if (loaderScreen) {
-    setTimeout(() => {
-        loaderScreen.classList.add('hidden');
-    }, 2000); // 2000 ms = 2 segundos
 }
