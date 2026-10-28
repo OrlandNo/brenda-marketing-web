@@ -18,55 +18,110 @@
     
     <!-- CSS Principal -->
     <link rel="stylesheet" href="../css/styles.css">
+
+    <!-- Estilos específicos para la sección de Código de Descuento -->
+    <style>
+        .discount-wrapper {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .discount-wrapper input {
+            flex: 1;
+            text-transform: uppercase;
+        }
+
+        .btn-apply-discount {
+            padding: 12px 20px;
+            background: rgba(168, 85, 247, 0.2);
+            border: 1px solid var(--purple-neon, #a855f7);
+            color: #ffffff;
+            font-weight: 700;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn-apply-discount:hover {
+            background: var(--purple-neon, #a855f7);
+            box-shadow: 0 0 12px rgba(168, 85, 247, 0.5);
+        }
+
+        .discount-alert-message {
+            display: none;
+            margin-top: 8px;
+            padding: 8px 12px;
+            background: rgba(32, 224, 152, 0.12);
+            border: 1px solid #20e098;
+            color: #20e098;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            align-items: center;
+            gap: 6px;
+            animation: fadeIn 0.3s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
 </head>
 <body>
 
-     <!-- =========================================================
-     BARRA SUPERIOR DE CONTEO REGRESIVO (STICKY COUNTER)
-========================================================= -->
-<div id="sticky-countdown-bar" class="countdown-bar">
-    <div class="countdown-container">
-        <!-- Info del Evento -->
-        <div class="countdown-info">
-            <span class="countdown-badge"><i class="ri-ghost-line"></i> ESPECIAL DE HALLOWEEN</span>
-            <p class="countdown-title">La oferta de temporada termina en:</p>
-        </div>
+    <!-- =========================================================
+         BARRA SUPERIOR DE CONTEO REGRESIVO (STICKY COUNTER)
+    ========================================================= -->
+    <div id="sticky-countdown-bar" class="countdown-bar">
+        <div class="countdown-container">
+            <!-- Info del Evento -->
+            <div class="countdown-info">
+                <span class="countdown-badge"><i class="ri-ghost-line"></i> ESPECIAL DE HALLOWEEN</span>
+                <p class="countdown-title">La oferta de temporada termina en:</p>
+            </div>
 
-        <!-- Temporizador Regresivo -->
-        <div class="countdown-timer">
-            <div class="timer-unit">
-                <span id="c-days" class="number">00</span>
-                <span class="label">Días</span>
-            </div>
-            <span class="dots">:</span>
-            <div class="timer-unit">
-                <span id="c-hours" class="number">00</span>
-                <span class="label">Horas</span>
-            </div>
-            <span class="dots">:</span>
-            <div class="timer-unit">
-                <span id="c-minutes" class="number">00</span>
-                <span class="label">Min</span>
-            </div>
-            <span class="dots">:</span>
-            <div class="timer-unit">
-                <span id="c-seconds" class="number">00</span>
-                <span class="label">Seg</span>
+            <!-- Temporizador Regresivo -->
+            <div class="countdown-timer">
+                <div class="timer-unit">
+                    <span id="c-days" class="number">00</span>
+                    <span class="label">Días</span>
+                </div>
+                <span class="dots">:</span>
+                <div class="timer-unit">
+                    <span id="c-hours" class="number">00</span>
+                    <span class="label">Horas</span>
+                </div>
+                <span class="dots">:</span>
+                <div class="timer-unit">
+                    <span id="c-minutes" class="number">00</span>
+                    <span class="label">Min</span>
+                </div>
+                <span class="dots">:</span>
+                <div class="timer-unit">
+                    <span id="c-seconds" class="number">00</span>
+                    <span class="label">Seg</span>
+                </div>
             </div>
         </div>
     </div>
-</div>
-        <!-- =========================================================
-     BOTÓN FLOTANTE DE WHATSAPP (ROJO CARMESÍ / DERECHA)
-========================================================= -->
-<a href="https://wa.me/5215500000000?text=Hola%20Brenda,%20me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20sobre%20tus%20servicios%20digitales." 
-   class="whatsapp-float-btn" 
-   target="_blank" 
-   rel="noopener noreferrer" 
-   aria-label="Contactar por WhatsApp">
-    <i class="ri-whatsapp-line"></i>
-    <span class="whatsapp-tooltip">¿Dudas? ¡Escríbenos!</span>
-</a>
+
+    <!-- =========================================================
+         BOTÓN FLOTANTE DE WHATSAPP (ROJO CARMESÍ / DERECHA)
+    ========================================================= -->
+    <a href="https://wa.me/5215500000000?text=Hola%20Brenda,%20me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20sobre%20tus%20servicios%20digitales." 
+       class="whatsapp-float-btn" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       aria-label="Contactar por WhatsApp">
+        <i class="ri-whatsapp-line"></i>
+        <span class="whatsapp-tooltip">¿Dudas? ¡Escríbenos!</span>
+    </a>
 
     <!-- Header & Menú de Navegación Responsivo -->
     <header class="main-header">
@@ -107,119 +162,158 @@
         </div>
     </header>
 
-    <!-- Contenedor Principal (Para maquetar contenido después) -->
+    <!-- Contenedor Principal -->
     <main class="main-content">
         <!-- =========================================================
-     SECCIÓN DE CONTACTO & FORMULARIO DE COTIZACIÓN (VISUAL)
-========================================================= -->
-<section class="contact-section">
-    <div class="contact-container">
-        
-        <!-- Encabezado -->
-        <div class="contact-header fade-in-up">
-            <span class="contact-badge">
-                <i class="ri-chat-smile-2-fill"></i> Cotización Personalizada
-            </span>
-            <h1 class="contact-title">
-                Hablemos de tu <span class="title-highlight">próximo proyecto</span>
-            </h1>
-            <p class="contact-subtitle">
-                Selecciona el servicio de tu interés y llena tus datos. Nos pondremos en contacto contigo lo antes posible para entregarte una propuesta a tu medida.
-            </p>
-        </div>
-
-        <!-- Tarjeta del Formulario (Redirección directa a Gracias) -->
-        <div class="contact-card-wrapper fade-in-up delay-1">
-            <form id="contactQuoteForm" action="../gracias/index.html" method="GET" class="formal-contact-form">
+             SECCIÓN DE CONTACTO & FORMULARIO DE COTIZACIÓN (VISUAL)
+        ========================================================= -->
+        <section class="contact-section">
+            <div class="contact-container">
                 
-                <div class="form-grid">
-                    
-                    <!-- Nombre Completo -->
-                    <div class="form-group">
-                        <label for="nombre" class="form-label">Nombre completo <span class="required">*</span></label>
-                        <div class="input-icon-wrapper">
-                            <i class="ri-user-3-line"></i>
-                            <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre" required autocomplete="name">
-                        </div>
-                    </div>
-
-                    <!-- Teléfono / WhatsApp -->
-                    <div class="form-group">
-                        <label for="telefono" class="form-label">Teléfono / WhatsApp <span class="required">*</span></label>
-                        <div class="input-icon-wrapper">
-                            <i class="ri-whatsapp-line"></i>
-                            <input type="tel" id="telefono" name="telefono" placeholder="Ej. 55 1234 5678" required autocomplete="tel">
-                        </div>
-                    </div>
-
-                    <!-- Correo Electrónico -->
-                    <div class="form-group">
-                        <label for="correo" class="form-label">Correo electrónico <span class="required">*</span></label>
-                        <div class="input-icon-wrapper">
-                            <i class="ri-mail-line"></i>
-                            <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.com" required autocomplete="email">
-                        </div>
-                    </div>
-
-                    <!-- Selector de Servicio -->
-                    <div class="form-group">
-                        <label for="servicio" class="form-label">Servicio a cotizar <span class="required">*</span></label>
-                        <div class="input-icon-wrapper">
-                            <i class="ri-service-line"></i>
-                            <select id="servicio" name="servicio" required>
-                                <option value="" disabled selected>Selecciona una opción</option>
-                                <option value="Creación y Grabación de Contenido">01. Creación y Grabación de Contenido</option>
-                                <option value="Guionismo y Copywriting">02. Guionismo y Copywriting</option>
-                                <option value="Campañas de Tráfico Pago y Meta Ads">03. Campañas de Tráfico Pago y Meta Ads</option>
-                                <option value="Edición de Video Profesional">04. Edición de Video Profesional</option>
-                                <option value="Producción de Podcasts">05. Producción de Podcasts 🎙️</option>
-                                <option value="Social Media Management">06. Social Media Management</option>
-                                <option value="Diseño de Identidad Visual y Logotipos">07. Diseño de Identidad Visual y Logotipos 🎨</option>
-                                <option value="Fotografía Comercial y de Marca">08. Fotografía Comercial y de Marca 📸</option>
-                                <option value="Consultoría y Mentoría 1 a 1">09. Consultoría y Mentoría 1 a 1</option>
-                                <option value="Diseño y Desarrollo Web">10. Diseño y Desarrollo Web</option>
-                            </select>
-                        </div>
-                    </div>
-
+                <!-- Encabezado -->
+                <div class="contact-header fade-in-up">
+                    <span class="contact-badge">
+                        <i class="ri-chat-smile-2-fill"></i> Cotización Personalizada
+                    </span>
+                    <h1 class="contact-title">
+                        Hablemos de tu <span class="title-highlight">próximo proyecto</span>
+                    </h1>
+                    <p class="contact-subtitle">
+                        Selecciona el servicio de tu interés y llena tus datos. Nos pondremos en contacto contigo lo antes posible para entregarte una propuesta a tu medida.
+                    </p>
                 </div>
 
-                <!-- Detalle o Mensaje Opcional -->
-                <div class="form-group full-width">
-                    <label for="mensaje" class="form-label">Detalles adicionales del proyecto (opcional)</label>
-                    <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos brevemente sobre tu marca, objetivos o fecha estimada..."></textarea>
+                <!-- Tarjeta del Formulario -->
+                <div class="contact-card-wrapper fade-in-up delay-1">
+                    <form id="contactQuoteForm" action="../gracias/index.html" method="GET" class="formal-contact-form">
+                        
+                        <div class="form-grid">
+                            
+                            <!-- Nombre Completo -->
+                            <div class="form-group">
+                                <label for="nombre" class="form-label">Nombre completo <span class="required">*</span></label>
+                                <div class="input-icon-wrapper">
+                                    <i class="ri-user-3-line"></i>
+                                    <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre" required autocomplete="name">
+                                </div>
+                            </div>
+
+                            <!-- Teléfono / WhatsApp -->
+                            <div class="form-group">
+                                <label for="telefono" class="form-label">Teléfono / WhatsApp <span class="required">*</span></label>
+                                <div class="input-icon-wrapper">
+                                    <i class="ri-whatsapp-line"></i>
+                                    <input type="tel" id="telefono" name="telefono" placeholder="Ej. 55 1234 5678" required autocomplete="tel">
+                                </div>
+                            </div>
+
+                            <!-- Correo Electrónico -->
+                            <div class="form-group">
+                                <label for="correo" class="form-label">Correo electrónico <span class="required">*</span></label>
+                                <div class="input-icon-wrapper">
+                                    <i class="ri-mail-line"></i>
+                                    <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.com" required autocomplete="email">
+                                </div>
+                            </div>
+
+                            <!-- Selector de Servicio -->
+                            <div class="form-group">
+                                <label for="servicio" class="form-label">Servicio a cotizar <span class="required">*</span></label>
+                                <div class="input-icon-wrapper">
+                                    <i class="ri-service-line"></i>
+                                    <select id="servicio" name="servicio" required>
+                                        <option value="" disabled selected>Selecciona una opción</option>
+                                        <option value="Creación y Grabación de Contenido">01. Creación y Grabación de Contenido</option>
+                                        <option value="Guionismo y Copywriting">02. Guionismo y Copywriting</option>
+                                        <option value="Campañas de Tráfico Pago y Meta Ads">03. Campañas de Tráfico Pago y Meta Ads</option>
+                                        <option value="Edición de Video Profesional">04. Edición de Video Profesional</option>
+                                        <option value="Producción de Podcasts">05. Producción de Podcasts 🎙️</option>
+                                        <option value="Social Media Management">06. Social Media Management</option>
+                                        <option value="Diseño de Identidad Visual y Logotipos">07. Diseño de Identidad Visual y Logotipos 🎨</option>
+                                        <option value="Fotografía Comercial y de Marca">08. Fotografía Comercial y de Marca 📸</option>
+                                        <option value="Consultoría y Mentoría 1 a 1">09. Consultoría y Mentoría 1 a 1</option>
+                                        <option value="Diseño y Desarrollo Web">10. Diseño y Desarrollo Web</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Campo de Código de Descuento (Nuevo) -->
+                            <div class="form-group full-width">
+                                <label for="codigo_descuento" class="form-label">Código de descuento (Opcional)</label>
+                                <div class="discount-wrapper">
+                                    <div class="input-icon-wrapper" style="width: 100%;">
+                                        <i class="ri-coupon-3-line"></i>
+                                        <input type="text" id="codigo_descuento" name="codigo_descuento" placeholder="Ej. HALLOWEEN2024">
+                                    </div>
+                                    <button type="button" id="btnApplyDiscount" class="btn-apply-discount">
+                                        <span>Agregar</span>
+                                        <i class="ri-price-tag-3-line"></i>
+                                    </button>
+                                </div>
+                                <!-- Mensaje de confirmación -->
+                                <div id="discountAlert" class="discount-alert-message">
+                                    <i class="ri-checkbox-circle-fill"></i> ¡Tienes un descuento especial!
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Detalle o Mensaje Opcional -->
+                        <div class="form-group full-width" style="margin-top: 15px;">
+                            <label for="mensaje" class="form-label">Detalles adicionales del proyecto (opcional)</label>
+                            <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos brevemente sobre tu marca, objetivos o fecha estimada..."></textarea>
+                        </div>
+
+                        <!-- Botón de Envío -->
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary btn-submit-quote">
+                                <span>SOLICITAR COTIZACIÓN</span>
+                                <i class="ri-send-plane-fill"></i>
+                            </button>
+                        </div>
+
+                    </form>
                 </div>
 
-                <!-- Botón de Envío / Redirección directa -->
-                <div class="form-actions">
-                    <button type="submit" class="btn btn-primary btn-submit-quote">
-                        <span>SOLICITAR COTIZACIÓN</span>
-                        <i class="ri-send-plane-fill"></i>
-                    </button>
-                </div>
-
-            </form>
-        </div>
-
-    </div>
-</section>
+            </div>
+        </section>
     </main>
 
     <!-- =========================================================
-     FOOTER PARA SUBCARPETAS
-========================================================= -->
-<footer class="main-footer">
-    <div class="footer-container">
-        <p class="footer-copy">
-            &copy; <span id="currentYear"></span> <strong>Brenda Peña Meza Marketing</strong>. Todos los derechos reservados.
-        </p>
-        <div class="footer-links">
-            <a href="../politica/index.html" class="footer-link">Política de Privacidad</a>
+         FOOTER PARA SUBCARPETAS
+    ========================================================= -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <p class="footer-copy">
+                &copy; <span id="currentYear"></span> <strong>Brenda Peña Meza Marketing</strong>. Todos los derechos reservados.
+            </p>
+            <div class="footer-links">
+                <a href="../politica/index.html" class="footer-link">Política de Privacidad</a>
+            </div>
         </div>
-    </div>
-</footer>
+    </footer>
 
     <!-- Script Principal -->
     <script src="../js/script.js"></script>
+
+    <!-- Script Lógica Código de Descuento -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const btnApplyDiscount = document.getElementById('btnApplyDiscount');
+            const discountInput = document.getElementById('codigo_descuento');
+            const discountAlert = document.getElementById('discountAlert');
+
+            if (btnApplyDiscount && discountInput && discountAlert) {
+                btnApplyDiscount.addEventListener('click', () => {
+                    const code = discountInput.value.trim();
+                    if (code !== '') {
+                        discountAlert.style.display = 'flex';
+                    } else {
+                        discountAlert.style.display = 'none';
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>
